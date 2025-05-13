@@ -1,10 +1,10 @@
 #!/usr/bin/node
 
-const size = parseInt(process.argv[2]);
+const size = parseInt(process.argv[2], 10); // explicitly base 10
 
-if (isNaN(size)) {
-  console.log('Missing size');
-  process.exit(1);
+if (isNaN(size) || size < 0) {
+  console.log('');
+  process.exit(0);
 }
 
 for (let i = 0; i < size; i++) {
